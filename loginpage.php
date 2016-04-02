@@ -12,7 +12,7 @@
             {
                 font-size: 1.8em;
             }
-            #topcontainer
+            #topContainer
             {
                 background-image: url(1.jpg);
                 height: 645px;
@@ -22,6 +22,31 @@
                 top: 35px;  
                 color: white;
             }
+            .navbar-brand{
+                font-size:1.8em;
+
+            }
+
+
+
+            #topRow {
+                text-align: center;
+                position: relative;
+                top: 50px;
+
+            }
+
+            #topRow h1{
+                font-size:300%;
+
+            }
+            textarea.form-control {
+                height: 350px;
+            }
+            .bold{
+                font-weight:bold;
+            }
+
 
 
         </style>
@@ -46,16 +71,35 @@
 
             </div>
         </nav>
-        <div class="container contentContainer" id="topcontainer">
+
+        <div class="container contentContainer" id="topContainer">
             <div class="row">
-                <div class="col-md-6 col-md-offset-4" id="toprow">
-                    <h1>My Awesome Apps</h1>
 
+                <div class="col-md-6 col-md-offset-3" id="topRow">
+
+                    <textarea class="form-control area"><?php echo $diary; ?></textarea>
                 </div>
-
 
             </div>
 
         </div>
+
+
+        <script>
+
+
+            $(".contentContainer").css("min-height", $(window).height());
+
+            $("textarea").css("height", $(window).height() - 110);
+
+            $("textarea").keyup(function () {
+
+                $.post("updatediary.php", {diary: $("textarea").val()});
+
+            });
+
+
+
+        </script>
     </body>
 </html>
