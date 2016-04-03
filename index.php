@@ -99,13 +99,12 @@ include("login.php");
                             <input type="submit" class="btn btn-success btn-lg margintop" name="signup" value="Sign Up">
                         </form>
                         <?php
-                        if (isset($message) == "Sign Up") {
-                            echo "<div class='alert alert-success'>" . $message . "</div>";
-                        }
-                        if (isset($error) == "Sign Up") {
-                            echo "<div class='alert alert-danger'>" . $error . "</div>";
-                        }
-                        ?>
+                    if(isset($error)){echo '<div class="alert alert-danger">'.$error.'</div>';
+                    }
+                    if(isset($message)){echo '<div class="alert alert-danger">'.$message.'</div>';
+                    }
+                    
+                    ?>
                     </div>
 
 

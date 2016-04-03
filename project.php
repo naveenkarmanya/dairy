@@ -1,33 +1,42 @@
 <?php
 
+session_start();
+
+
+
+
 if (isset($_POST['signup'])) {
+    if ($_POST["signup"] == "Sign Up") {
     $email = $_POST['email'];
     $password = $_POST['password'];
-
-
-
-
-    /* echo "<u><h1>Your Output</h1></u>";
-      echo "<b>Email Address:</b>" . $_POST["email"];
-      echo "<br><br>";
-      echo "<b>Password:</b>" . $_POST["password"];
-      echo "<br><br>"; */
-
+    
 
     $link = mysqli_connect('localhost', 'dbuser', '123', 'userdata');
-//$query="insert into user (firstname,lastname,email,phone,city) values('naveen999@gmail.com','00000','4')";
-//mysqli_query($link,$query);
+   
+     if (!($_POST["email"] == ""&&!($_POST["password"]))) {
+        $queryselect="select * from form1 where email='$email' and password='$password'";
+            $resultselect=mysqli_query($link, $queryselect);
+            $values=mysqli_fetch_array($resultselect);
 
-    $query = "insert into form1(email,password) values('$email','$password')";
+    if($values){
+        $error="email already registered";
+}
+    
+    
+			else {
+                             $query = "insert into form1(email,password) values('$email','$password')";
     $result = mysqli_query($link, $query);
-    $query1 = "select * from form1";
-
-    $result1 = mysqli_query($link, $query1);
-    $row = mysqli_fetch_all($result1);
-    if ($row) {
-        $message = "successfully signed up";
-    } else {
-        $error = "Please enter email and password";
+                        }
+                        }
+			
+else 
+        {
+            $error = "Please enter Email and password to sign Up";
+        }
+        
+        if(!isset($error)){
+            $message = "Sign up successful " . "Please login to use your secret diary";
+        }
     }
 }
 ?>
