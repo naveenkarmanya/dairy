@@ -10,7 +10,7 @@ include("login.php");
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        
+
         <script src="js/bootstrap.min.js" ></script>
         <style>
             .navbar-brand
@@ -99,12 +99,13 @@ include("login.php");
                             <input type="submit" class="btn btn-success btn-lg margintop" name="signup" value="Sign Up">
                         </form>
                         <?php
-                    if(isset($error)){echo '<div class="alert alert-danger">'.$error.'</div>';
-                    }
-                    if(isset($message)){echo '<div class="alert alert-danger">'.$message.'</div>';
-                    }
-                    
-                    ?>
+                        if (isset($error)) {
+                            echo '<div class="alert alert-danger">' . $error . '</div>';
+                        }
+                        if (isset($message)) {
+                            echo '<div class="alert alert-danger">' . $message . '</div>';
+                        }
+                        ?>
                     </div>
 
 

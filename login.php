@@ -2,7 +2,8 @@
 
 
 <?php
-     session_start();
+
+session_start();
 if (isset($_POST['login'])) {
     $email = $_POST['loginemail'];
     $password = $_POST['loginpassword'];
@@ -19,13 +20,10 @@ if (isset($_POST['login'])) {
     $row = mysqli_fetch_array($result1);
     if (!$row) {
         $error = "Login Failed check the credentials ";
-    }
-       
-     else {
-         $_SESSION['id']=$row['sesionid'];
- 
+    } else {
+        $_SESSION['id'] = $row['sesionid'];
+
         header("Location:loginpage.php");
-      
     }
 }
 ?>

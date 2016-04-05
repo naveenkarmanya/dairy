@@ -1,7 +1,6 @@
 
 <?php
-
- $link = mysqli_connect('localhost', 'dbuser', '123', 'userdata');
+$link = mysqli_connect('localhost', 'dbuser', '123', 'userdata');
 session_start();
 $session = $_SESSION["id"];
 $query = "select * from form1 where sesionid='$session'";
@@ -15,14 +14,15 @@ $row1 = mysqli_fetch_array($resultlogin);
         <meta charset="UTF-8">
         <title>Secret Diary</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/JavaScript" src="js/jquery.min.js"></script>
+
         <script src="js/bootstrap.min.js"></script>
         <style>
             .left{
                 margin-left: 10px;
             }
             #backimg{
-                
+
                 background-size: cover;
                 width: 100%;
                 padding-top: 100px;
@@ -106,7 +106,9 @@ $row1 = mysqli_fetch_array($resultlogin);
                 </div>
             </div>
             <div class="col-md-12 ">
-                <textarea class="containertext form-control"><?php echo $row1["diarydata"]; ?></textarea>
+                <textarea class="containertext form-control"><?php echo $row1["diarydata"];
+echo $row1['sesionid'];
+?></textarea>
             </div>
         </div>
 
