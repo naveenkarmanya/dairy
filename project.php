@@ -1,7 +1,9 @@
 <?php
 
-if (isset($_POST['signup'])) {
-    if ($_POST["signup"] == "Sign Up") {
+if (isset($_POST['signup'])) 
+    {
+    if ($_POST["signup"] == "Sign Up") 
+        {
         $email = $_POST['email'];
         $password = $_POST['password'];
 

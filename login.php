@@ -8,9 +8,6 @@ if (isset($_POST['login'])) {
     $email = $_POST['loginemail'];
     $password = $_POST['loginpassword'];
 
-
-
-
     $link = mysqli_connect('localhost', 'dbuser', '123', 'userdata');
 
     $query1 = "select * from form1 where password='$password' and email='$email'";

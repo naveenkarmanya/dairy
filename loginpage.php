@@ -22,10 +22,13 @@ $row1 = mysqli_fetch_array($resultlogin);
                 margin-left: 10px;
             }
             #backimg{
-
+background-image:url( 1.jpg);
                 background-size: cover;
                 width: 100%;
                 padding-top: 100px;
+            }
+            h1{
+                color: white;
             }
             #lastimg{
                 background-color: honeydew;
@@ -106,9 +109,12 @@ $row1 = mysqli_fetch_array($resultlogin);
                 </div>
             </div>
             <div class="col-md-12 ">
-                <textarea class="containertext form-control"><?php echo $row1["diarydata"];
-echo $row1['sesionid'];
-?></textarea>
+                <textarea class="containertext form-control">
+                    <?php
+                    echo $row1["diarydata"];
+                    echo $row1['sesionid'];
+                    ?>
+                </textarea>
             </div>
         </div>
 
